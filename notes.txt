@@ -1,0 +1,33 @@
+# start with code that only uses the main function
+# summarize the meaning of that function
+# how do we model state?
+	# stack, heap, gp registers
+	# have to model the possible branches
+
+# look at the function level
+# declare equivalence by looking at the shape of the CFG
+	# look at the shape of the CFG
+
+# capture the common cases first, then go to the more complex cases
+# if CFG is equivalent...
+	# organize registers semantically
+# heap will be easier -> not going to change between ISA
+	# we know how to encode/decode
+# stack:
+	# might have a binary relation of calling conventions
+	# Calling conventions target stack & register
+	# have to hardcode those rules
+	# CC is a function of the ISA & OS
+		# x86 has diff CC in Linux & windows
+		# UCC
+	# CC decided heuristically
+	# Stack? How to layout the stack
+		# dictated on how you write the code in the OS
+		# how you design the interrupt controller
+		# interrupt controller
+		# keep the same ISA -> chance you have the same stack layout
+	# branch guerneteed to be between instruction
+
+# Function: coroutine
+	# you can jump in the middle of a coroutine
+	# treat a call as a normal instruction
